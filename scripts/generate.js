@@ -6,7 +6,7 @@ const path = require("path");
 const fs = require("fs");
 const chalk = require("chalk");
 const prompts = require("prompts");
-const { generate } = require("../lib/generate");
+const { generate, addToProject } = require("../lib/generate");
 let projectName;
 
 const logoFileName = "bootsplash_logo";
