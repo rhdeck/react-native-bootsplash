@@ -129,4 +129,5 @@ const questions = [
 
 prompts(questions)
   .then(generate)
+  .then(addToProject)
   .catch(error => log(chalk.red.bold(error.toString())));
