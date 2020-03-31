@@ -40,7 +40,10 @@
     "react-native": ">=0.60.0"
   },
   "dependencies": {
-    "jimp": "0.9.5"
+    "@raydeck/xcode": "2.2.1",
+    "glob": "7.1.6",
+    "jimp": "0.9.5",
+    "plist": "3.0.1"
   },
   "devDependencies": {
     "@babel/core": "7.8.7",
