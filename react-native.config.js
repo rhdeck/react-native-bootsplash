@@ -16,19 +16,25 @@ module.exports = {
         {
           name: "--iconPath [path]",
           description:
-            "Path to icon to build the bootsplash screen around (leave blank for interactive)",
+            "Path to icon to build the bootsplash screen around in universal/light/day mode interfaces (leave blank for interactive)",
           default: "",
         },
         {
           name: "--backgroundColor <color>",
           description: "Background color to wrap around the icon",
-          default: "#fff",
+          default: "",
         },
         {
           name: "--iconWidth <width>",
           default: 100,
           parse: arg => parseInt(arg),
           description: "Width of the icon in background image",
+        },
+        {
+          name: "--darkIconPath [path]",
+          description:
+            "Path to icon Path to icon  to build bootsplash screen around in dark/night mode interfaces",
+          default: "",
         },
       ],
       func: async (
