@@ -5,7 +5,14 @@ const { existsSync, mkdirSync } = require("fs");
 module.exports = {
   commands: [
     {
-      name: "init-bootsplash",
+      name: "add-bootsplash-to-xcode",
+      description: "Add bootsplash launch screen to xcode",
+      func: () => {
+        addToProject();
+      },
+    },
+    {
+      name: "generate-bootsplash [iconPath]",
       description: "Initialize bootsplash with arguments or interactively",
       options: [
         {
@@ -36,12 +43,34 @@ module.exports = {
             "Path to icon Path to icon  to build bootsplash screen around in dark/night mode interfaces",
           default: "",
         },
+        {
+          name: "--darkBackgroundColor <color>",
+          description:
+            "Background color to wrap around the icon in dark/night mode",
+          default: "",
+        },
+        {
+          name: "--addToXcode",
+          description:
+            "Add the storyboard file to Xcode and make it default launch screen",
+        },
       ],
       func: async (
-        _,
+        [possibleIconPath],
         __,
-        { assetsPath, iconPath, backgroundColor, iconWidth },
+        {
+          assetsPath,
+          iconPath,
+          backgroundColor,
+          iconWidth,
+          addToXcode,
+          darkIconPath,
+          darkBackgroundColor,
+        },
       ) => {
+        if (possibleIconPath && !iconPath) {
+          iconPath = possibleIconPath;
+        }
         if (!iconPath) {
           spawnSync("node", [join(__dirname, "scripts", "generate.js")], {
             stdio: "inherit",
@@ -55,8 +84,10 @@ module.exports = {
             backgroundColor,
             iconWidth: iconWidth,
             confirmation: true,
+            darkBackgroundColor,
+            darkIconPath,
           });
-          addToProject();
+          if (addToXcode) addToProject();
         }
       },
     },
