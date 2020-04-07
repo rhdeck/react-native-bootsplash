@@ -16,18 +16,13 @@ module.exports = {
       description: "Initialize bootsplash with arguments or interactively",
       options: [
         {
-          name: "--assetsPath <path>",
-          description: "Path for storing assets",
-          default: "./assets",
-        },
-        {
           name: "--iconPath [path]",
           description:
             "Path to icon to build the bootsplash screen around in universal/light/day mode interfaces (leave blank for interactive)",
           default: "",
         },
         {
-          name: "--backgroundColor <color>",
+          name: "--backgroundColor [color]",
           description: "Background color to wrap around the icon",
           default: "",
         },
@@ -44,7 +39,7 @@ module.exports = {
           default: "",
         },
         {
-          name: "--darkBackgroundColor <color>",
+          name: "--darkBackgroundColor [color]",
           description:
             "Background color to wrap around the icon in dark/night mode",
           default: "",
@@ -59,7 +54,6 @@ module.exports = {
         [possibleIconPath],
         __,
         {
-          assetsPath,
           iconPath,
           backgroundColor,
           iconWidth,
@@ -68,15 +62,12 @@ module.exports = {
           darkBackgroundColor,
         },
       ) => {
-        if (possibleIconPath && !iconPath) {
-          iconPath = possibleIconPath;
-        }
+        if (possibleIconPath && !iconPath) iconPath = possibleIconPath;
         if (!iconPath) {
           spawnSync("node", [join(__dirname, "scripts", "generate.js")], {
             stdio: "inherit",
           });
         } else {
-          if (!existsSync(assetsPath)) mkdirSync(assetsPath);
           const out = await generate({
             projectPath: ".",
             assetsPath,
