@@ -40,7 +40,7 @@
     "react-native": ">=0.60.0"
   },
   "dependencies": {
-    "@raydeck/react-native-utilities": "1.0.0",
+    "@raydeck/react-native-utilities": "1.0.1",
     "@raydeck/xcode": "2.2.1",
     "commander": "5.0.0",
     "glob": "7.1.6",
