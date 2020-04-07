@@ -40,6 +40,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="{{imageName}" width="{{width}}" height="{{height}}"/>
+        <image name="{{imageAsset}}" width="{{width}}" height="{{height}}"/>
     </resources>
 </document>

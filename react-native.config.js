@@ -24,7 +24,6 @@ module.exports = {
         {
           name: "--backgroundColor [color]",
           description: "Background color to wrap around the icon",
-          default: "",
         },
         {
           name: "--iconWidth <width>",
@@ -36,13 +35,11 @@ module.exports = {
           name: "--darkIconPath [path]",
           description:
             "Path to icon Path to icon  to build bootsplash screen around in dark/night mode interfaces",
-          default: "",
         },
         {
           name: "--darkBackgroundColor [color]",
           description:
             "Background color to wrap around the icon in dark/night mode",
-          default: "",
         },
         {
           name: "--addToXcode",
@@ -68,17 +65,20 @@ module.exports = {
             stdio: "inherit",
           });
         } else {
-          const out = await generate({
-            projectPath: ".",
-            assetsPath,
-            iconPath,
-            backgroundColor,
-            iconWidth: iconWidth,
-            confirmation: true,
-            darkBackgroundColor,
-            darkIconPath,
-          });
-          if (addToXcode) addToProject();
+          try {
+            await generate({
+              projectPath: ".",
+              iconPath,
+              backgroundColor,
+              iconWidth: iconWidth,
+              darkBackgroundColor,
+              darkIconPath,
+            });
+            if (addToXcode) addToProject();
+          } catch (e) {
+            console.log("I hit an error");
+            console.error(e);
+          }
         }
       },
     },

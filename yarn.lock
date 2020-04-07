@@ -1232,8 +1232,10 @@
     core-js "^3.4.1"
     regenerator-runtime "^0.13.3"
 
-"@raydeck/react-native-utilities@../../react-native-utilities":
+"@raydeck/react-native-utilities@1.0.0":
   version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@raydeck/react-native-utilities/-/react-native-utilities-1.0.0.tgz#d82cbf2b4dbc82deb7a710b9c95ea8dcbd22c3c6"
+  integrity sha512-9qk/EV64Tg5J3MkNj9ST0hiPBqwVB+69N+BumsSx/8h0g9k4INfre01kqfuNgSwXftt3UUkyE5mc+gGbaFlcwA==
   dependencies:
     "@raydeck/xcode" "^2.2.1"
     jimp "^0.10.1"
@@ -3365,7 +3367,7 @@ jetifier@^1.6.2:
   resolved "https://registry.yarnpkg.com/jetifier/-/jetifier-1.6.4.tgz#6159db8e275d97980d26162897a0648b6d4a3222"
   integrity sha512-+f/4OLeqY8RAmXnonI1ffeY1DR8kMNJPhv5WMFehchf7U71cjMQVKkOz1n6asz6kfVoAqKNWJz1A/18i18AcXA==
 
-jimp@^0.10.1:
+jimp@0.10.1, jimp@^0.10.1:
   version "0.10.1"
   resolved "https://registry.yarnpkg.com/jimp/-/jimp-0.10.1.tgz#052fbf00fd955ada1bfc0f9c3a16d4980bd3178a"
   integrity sha512-dRs9hdUXseS7y214GxZxeLiXNQZUXnjdzv9I5+FVWAnyK0bdIGgjUn5WLuNF4uAKkzIH3cFA24EbviOlBIpRDg==
