@@ -3,7 +3,7 @@
 const path = require("path");
 const chalk = require("chalk");
 const prompts = require("prompts");
-const { generate, addToProject } = require("../lib/generate");
+const { generate, addToProject, getInteractively } = require("../lib/generate");
 const log = (text, dim = false) => console.log(dim ? chalk.dim(text) : text);
 const base = {};
 (async () => {
