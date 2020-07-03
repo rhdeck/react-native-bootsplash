@@ -40,14 +40,14 @@
     "react-native": ">=0.60.0"
   },
   "dependencies": {
-    "@raydeck/react-native-utilities": "1.0.3",
+    "@raydeck/react-native-utilities": "1.4.1",
     "@raydeck/xcode": "2.2.1",
+    "chalk": "4.0.0",
     "commander": "5.0.0",
     "glob": "7.1.6",
-    "chalk": "4.0.0",
     "jimp": "0.10.1",
-    "prompts": "2.3.2",
-    "mustache": "4.0.1"
+    "mustache": "4.0.1",
+    "prompts": "2.3.2"
   },
   "devDependencies": {
     "@babel/core": "7.9.0",
